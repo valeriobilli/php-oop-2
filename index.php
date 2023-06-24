@@ -1,7 +1,7 @@
 <?php 
 
-    require __DIR__ . "models/category.php";
-    require __DIR__ . "models/product.php";
+    require __DIR__ . "./models/category.php";
+    require __DIR__ . "./models/product.php";
 
     $dogsCategory = new category("dog", "fa-solid fa-dog");
     $catsCategory = new category("cat", "fa-solid fa-cat");
@@ -18,6 +18,14 @@
     <title>Pet Shop</title>
 </head>
 <body>
-    
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>Pet Shop</h1>
+                <h3>Categories</h3>
+            </div>
+            
+        </div>
+    </div>
 </body>
 </html>
