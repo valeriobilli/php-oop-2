@@ -1,5 +1,9 @@
 <?php 
 
+    require __DIR__ . "models/category.php";
+    require __DIR__ . "models/product.php";
+
+
 ?>
 
 <!DOCTYPE html>
