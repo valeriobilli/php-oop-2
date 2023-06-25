@@ -17,6 +17,10 @@ class Product {
         $this->avalaible = $avalaible;
         $this->quantity = $quantity;
     }
+
+    public function getClassName() {
+        return get_class(); 
+    }
 }
 
 ?>

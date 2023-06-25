@@ -6,6 +6,12 @@
     $dogsCategory = new category("dog", "fa-solid fa-dog");
     $catsCategory = new category("cat", "fa-solid fa-cat");
     $productCategories = [$dogsCategory, $catsCategory];
+
+    $products = [
+        new Product("Ciotola acqua per cane", 7.99, $dogsCategory, "https://shop-cdn-m.mediazs.com/bilder/ciotola/karlie/in/acciaio/inossidabile/con/motivo/a/zampine/nero/5/400/209199_pla_karlie_edelstahlnapf_pfotenmotiv_schwarz_hs_01_5.jpg", true, 76),
+        new Product("Croccantini per cane gusto pollo", 13.99, $dogsCategory, "https://rep.grupposme.net/RepAP?code=D1446861&skey=f3b6c41bd09b8d169679070be320a5ac&resize=500", true, 234),
+        new Product("Gioco per gatto", 9.99, $catsCategory, "https://shop-cdn-m.mediazs.com/bilder/gioco/per/gatti/ferplast/flashlight/6/400/491124_katzenkarussell_flashlight_6.jpg", true, 68),
+    ]
 ?>
 
 <!DOCTYPE html>
@@ -21,13 +27,14 @@
 </head>
 <body>
     <div class="container">
-        <div class="row">
+        <div class="row mb-3">
             <div class="col-12 text-center">
                 <h1>Pet Shop</h1>
                 <h3>Categories</h3>
             </div>
-        <div class="row">
-        <div class="col-12 d-flex justify-content-around">
+        </div>
+        <div class="row mb-5">
+            <div class="col-12 d-flex justify-content-around">
                 <?php 
                     foreach($productCategories as $category) { ?>
                     <div class="text-center d-flex p-2 badge text-bg-secondary">
@@ -36,6 +43,25 @@
                     </div>
                 <?php } ?>
             </div>
+        </div>
+        <div class="row d-flex">
+            
+                <?php foreach ($products as $product) { ?>
+                    <div class="col-4 d-flex">
+                        <div class="card">
+                            <div class="card-header text-center">
+                                <i class="fa-solid <?= $product->category->icon ?> me-2"></i>
+                                <?= $product->name ?>
+                            </div>
+                            <div class="card-body">
+                                <div>Prezzo: <?= $product->price ?>€</div>
+                                <div>Prodotto di tipo: <?= $product->getClassName() ?></div>
+                                <img src="<?= $product->image ?>" alt="<?= $product->name ?>" class="w-100">
+                            </div>
+                        </div>
+                    </div>
+                <?php } ?>  
+            
         </div>
            
             
