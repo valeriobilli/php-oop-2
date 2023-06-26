@@ -61,6 +61,14 @@
                             <div class="card-body">
                                 <div>Prezzo: <?= $product->price ?>€</div>
                                 <div class="mb-2">Prodotto di tipo: <?= $product->getClassName() ?></div>
+                                <span>
+                                    <?php if($product instanceof Game){ ?>
+                                        Materiale: <?= $product->material ?><br>
+                                    <?php } else if($product instanceof Food) { ?>
+                                        Peso: <?= $product->weight ?> g<br>
+                                    <?php } ?>
+                                </span>
+
                                 <img src="<?= $product->image ?>" alt="<?= $product->name ?>" class="w-100 mb-4">
                                 <div class="text-center">
                                     <button class="btn btn-success">Compra</button>
