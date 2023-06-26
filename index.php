@@ -2,16 +2,18 @@
 
     require_once __DIR__ . "/models/category.php";
     require_once __DIR__ . "/models/product.php";
-    require_once __DIR__ . "/models/Food.php";
+    require_once __DIR__ . "/models/food.php";
+    require_once __DIR__ . "/models/game.php";
+
 
     $dogsCategory = new category("dog", "fa-solid fa-dog");
     $catsCategory = new category("cat", "fa-solid fa-cat");
     $productCategories = [$dogsCategory, $catsCategory];
 
     $products = [
-        new Product("Cordino per cane", 4.99, $dogsCategory, "https://arcaplanet.vtexassets.com/arquivos/ids/223864-1800-1800/trixie-cane-gioco-corda.jpg?v=1774027684&quality=1&width=1800&height=1800", true, 43),
+        new Game("Cordino per cane", 4.99, $dogsCategory, "https://arcaplanet.vtexassets.com/arquivos/ids/223864-1800-1800/trixie-cane-gioco-corda.jpg?v=1774027684&quality=1&width=1800&height=1800", true, 43, "Stoffa"),
         new Food("Croccantini per cane gusto pollo", 13.99, $dogsCategory, "https://rep.grupposme.net/RepAP?code=D1446861&skey=f3b6c41bd09b8d169679070be320a5ac&resize=500", true, 234, 300),
-        new Product("Gioco per gatto", 9.99, $catsCategory, "https://shop-cdn-m.mediazs.com/bilder/gioco/per/gatti/ferplast/flashlight/6/400/491124_katzenkarussell_flashlight_6.jpg", true, 68),
+        new Game("Gioco per gatto", 9.99, $catsCategory, "https://shop-cdn-m.mediazs.com/bilder/gioco/per/gatti/ferplast/flashlight/6/400/491124_katzenkarussell_flashlight_6.jpg", true, 68, "Plastica"),
         new Product("Tiragraffi", 16.99, $catsCategory, "https://shop-cdn-m.mediazs.com/bilder/colonna/tiragraffi/karlie/rofra/0/400/308196_pla_karlie_kratzbaum_rofra_hs_01_0.jpg", true, 53),
         new Product("Fontanella acqua", 34.99, $catsCategory, "https://m.media-amazon.com/images/I/715uJY11OmL._AC_UF894,1000_QL80_.jpg", true, 23),
         new Food("Umido per gatto Royal Canin", 12.99, $catsCategory, "https://shop-cdn-m.mediazs.com/bilder/gratis/x/g/royal/canin/fhn/umido/per/gatto/7/400/203618_pla_royalcanin_sensorysmell_sosse_85g_hs_01_7.jpg", true, 99, 180),
